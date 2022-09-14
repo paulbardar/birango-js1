@@ -1,0 +1,72 @@
+.contact-block {
+  padding-bottom: 140px;
+  &--map {
+    padding-top: 10px;
+  }
+  .contact-form-block {
+    background: $orange;
+    padding: 60px 4.17vw 60px 4.3vw;
+    border-radius: 20px;
+    &--title {
+      margin-bottom: 53px;
+      span {
+        color: $white;
+      }
+
+    }
+    .contact-form {
+      &--item {
+        margin-bottom: 34px;
+        &:last-child {
+          margin-bottom: 28px;
+        }
+        label {
+          color: $white;
+          font-size: 14px;
+          margin-bottom: 0;
+        }
+        .form-control {
+          font-size: 1.8rem;
+          color: $light-gray;
+          padding: 0;
+          border: 0;
+          line-height: 1.8;
+          background: transparent;
+          border-bottom: 1px solid $dark;
+          border-radius: 0;
+          &::placeholder {
+            color: $light-gray;
+            font-size: 1.8rem;
+          }
+          &:focus {
+            border-bottom: 1px solid $light-gray;
+            box-shadow: none;
+          }
+        }
+        textarea {
+          min-height: auto;
+        }
+      }
+      &--footer {
+        p {
+          margin-bottom: 30px;
+          font-size: 14px;
+          .terms-link {
+            color: inherit;
+            text-decoration: underline;
+          }
+        }
+      }
+      &--textarea {
+        margin-bottom: 28px;
+      }
+    }
+
+  }
+  @include media-breakpoint-down(lg) {
+    padding-bottom: 80px;
+    .contact-form-block {
+      margin-bottom: 60px;
+    }
+  }
+}

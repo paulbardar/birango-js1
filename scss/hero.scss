@@ -1,0 +1,303 @@
+
+
+
+//@media (min-width: 1400px) {
+//  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+//    max-width: $container-xl-max-widths;
+//    padding: 0 20px;
+//  }
+//}
+
+// Image giphy styles
+#hero_actual {
+  &:after {
+    content: '';
+    display:block;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:1;
+    transform: translateY(0%);
+    transition: transform 2s ease-in;
+    background: $body-bg;
+  }
+  &.imagegifshow {
+    &:after {
+      transform: translateY(-101%);
+    }
+  }
+}
+.img-giff {
+  //position: relative;
+  //bottom: 0;
+  //right: 0;
+  //width: 100vw;
+  //height: 100vh;
+  //z-index: 10;
+  //border-radius: 10px;
+  overflow: hidden;
+  background-image: url('../images/giphy.gif');
+  background-size: cover;
+  width: 205px;
+  height: 317px;
+  //z-index: 0;
+  right: 0;
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  transition: 1s;
+  opacity: 0;
+  //animation: 1s ease-in 1.5s 1 forwards giphyDown;
+  &:after {
+    content: '';
+    display:block;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:1;
+    transform: translateY(0%);
+    transition: transform 1s ease-in;
+    background: $body-bg;
+  }
+  &.imagegifshow {
+    z-index: 0;
+    opacity: 1;
+    &:after {
+      transform: translateY(-101%);
+    }
+  }
+  &.imagegifshowback {
+    z-index: 0;
+  }
+  &.imagesmall {
+    width: 300px;
+    height: 200px;
+    z-index: 0;
+    right: 20px;
+    position: absolute;
+    bottom: 0;
+    //&.removeAnimation {
+    //  animation:none !important;
+    //  bottom: 0;
+    //  right: 3%;
+    //}
+  }
+  &.imggif-anim {
+    animation: giphyFlyingOut 1s ease-in 1 forwards;
+  }
+  @include media-breakpoint-down(lg) {
+    //animation: 1s ease-in 1.5s 1 forwards giphyDownSmall;
+    //&.imagesmall {
+      width: 144px;
+      height: 221px;
+      position: absolute;
+      right: 0;
+    bottom: 0;
+      order: 12;
+    //}
+  }
+  &.growing {
+    height: auto;
+    margin: 0;
+    opacity: 0;
+    transition-delay: 0.1s;
+  }
+  &.full-screen {
+    height: 100vh;
+    z-index: 100;
+    margin: 0;
+    border-radius: 0;
+  }
+  &.shrinking {
+    transition-delay: 0.1s;
+    transition: 1s;
+    opacity: 0;
+    display: block;
+    z-index: 1;
+  }
+}
+
+.hero {
+  position: relative;
+  padding-top: 184px;
+  padding-bottom: 200px;
+  overflow: hidden;
+  &.visual {
+    //height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  .container {
+
+  }
+  .hero-wrap {
+    position: relative;
+    //padding: 60px 0 0;
+  }
+  .hero-content {
+    padding: 62px 0 0;
+    position: relative;
+    z-index: 11;
+    .hero-footer {
+      max-width: 552px;
+      margin-left: 212px;
+      a {
+          display: inline-block;
+          font-size: $font-size-base;
+          letter-spacing: 0.01rem;
+          //padding: 0.6rem 0.5rem 0.6rem 2.5rem;
+          //border: 0.3rem solid $white;
+          //text-transform: uppercase;
+        // margin-bottom: 15.5rem;
+
+        }
+      &--text {
+        max-width: 295px;
+        &.hero-text-anim {
+          animation: heroTextFlyRight 1s ease-in 1 forwards;
+        }
+      }
+    }
+  }
+  .title-block {
+    padding: 0 50px 85px 143px;
+    position: relative;
+    z-index: 10;
+
+  }
+  .hero-title {
+    font-family: $font-prompt;
+    font-weight: 700;
+    color: $dark;
+    text-transform: uppercase;
+    .h1-title-line {
+      text-align: left;
+      display: block;
+      line-height: 99px;
+      margin-bottom: 9px;
+      .h1-italic {
+        font-style: italic;
+        text-transform: lowercase;
+        font-weight: 300;
+        letter-spacing: 1px;
+      }
+      &:nth-child(odd) {
+        padding-left: 96px;
+      }
+      &:nth-child(even) {
+        position: relative;
+        padding-left: 7px;
+      }
+      &:last-child {
+        padding-left: 112px;
+      }
+      .color-title {
+        color: $orange;
+      }
+      &.h1-title-line {
+        &.title-fly-right {
+          animation: titleFlyingRight 1s ease-in 1 forwards;
+        }
+        &.title-fly-left {
+          animation: titleFlyingLeft 1s ease-in 1 forwards;
+        }
+
+      }
+    }
+
+  }
+  .btn-hero {
+    &.btn-hero-anim {
+      animation: btnHeroFlyLeft 1s ease-in 1 forwards;
+    }
+  }
+  .img-gif2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: img2Flying 2.2s ease-in 0.5s 1 forwards;
+    img {
+      width: 155px;
+      height: 150px;
+      border-radius: 10px;
+    }
+    &.imggif2-anim {
+      animation: img2FlyingBack 1s ease-in 1 forwards;
+    }
+  }
+  &.hero-top {
+    .img-giff {
+      animation: giphyFlyingBack 1s ease-in 1 forwards;
+    }
+    .img-gif2 {
+      &.imggif2-anim {
+        animation: img2Flying 1s ease-in  1 forwards;
+      }
+    }
+    .hero-title {
+      .h1-title-line {
+        &.title-fly-right {
+          animation: titleFlyingrightBack 1s ease-in 1 forwards;
+        }
+        &.title-fly-left {
+          animation: titleFlyingLeftBack 1s ease-in 1 forwards;
+        }
+      }
+    }
+    .btn-hero {
+      &.btn-hero-anim {
+        animation: btnHeroFlyLeftBack 1s ease-in 1 forwards;
+      }
+    }
+    .hero-content {
+      .hero-footer--text {
+        animation: heroTextFlyRightBack 1s ease-in 1 forwards;
+      }
+    }
+
+  }
+  @include media-breakpoint-down(lg) {
+      padding: 107px 0 110px;
+      .hero-content {
+        padding: 10px 0 0;
+        display: flex;
+        flex-direction: column;
+        .title-block {
+          order: 0;
+          padding: 0;
+          .hero-title {
+            margin-bottom: 24px;
+            .h1-title-line {
+              padding: 0;
+              text-align: center;
+              line-height: 1.05;
+              margin-bottom: 2px;
+            }
+          }
+        }
+        .img-gif2 {
+          order: 10;
+          display: block;
+          position: relative;
+          img {
+            width: 114px;
+            height: 110px;
+          }
+
+        }
+        .hero-footer {
+          max-width: 100%;
+          margin-left: 0;
+          padding-bottom: 63px;
+          &--text {
+            margin-bottom: 46px;
+          }
+        }
+      }
+
+  }
+}

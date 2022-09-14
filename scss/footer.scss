@@ -1,0 +1,109 @@
+.footer {
+  background-color: $white;
+  .footer-top {
+    border-bottom: 2px solid $gray-light;
+  }
+  .footer-navbar {
+    padding: 34px 0 30px;
+    .footer-logo-block {
+      .navbar-brand {
+        margin-bottom: 16px;
+      }
+      p {
+        font-size: 1rem;
+        line-height: 1.3;
+        color: $dark;
+      }
+    }
+    .menu-block {
+      &--title {
+        margin-bottom: 17px;
+        color: $orange;
+      }
+      &--item {
+        .nav-item {
+          a {
+            font-size: 15px;
+            line-height: 1.46;
+            color: $dark;
+            transition: all .3s ease-in;
+            i {
+              font-size: 21px;
+            }
+            &:hover {
+              color: $light-gray;
+            }
+          }
+        }
+      }
+      &--wrap {
+        max-width: 110px;
+        margin-left: auto;
+      }
+      &--follow {
+        padding-right: 10px;
+        .menu-block--title {
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+  .footer-btm {
+    padding: 15px 0;
+    .copyrights {
+      font-size: 10px;
+      line-height: 1.4;
+      color: $dark;;
+    }
+    .terms-nav {
+      .nav-item {
+        font-size: 10px;
+        line-height: 1.4;
+        color: $dark;
+        margin-left: 52px;
+        &:first-child {
+          margin-left: 0;
+        }
+        .nav-link {
+          color: inherit;
+          &:hover {
+            color: $light-gray;
+          }
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    .footer-navbar {
+      .footer-logo-block {
+        margin-bottom: 40px;
+        p {
+          margin-left: 24px;
+          max-width: 87px;
+        }
+      }
+      .menu-block {
+        &--title {
+          margin-bottom: 16px;
+        }
+        &--item {
+          margin-bottom: 40px;
+        }
+        .menu-block-mobile {
+          .nav-item {
+            margin-left: 24px;
+            &:first-child {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+  .footer-btm {
+    .copyrights {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  }
+}
